@@ -6,11 +6,12 @@ Products
 
 {% block content %}
     <h1>Products</h1>
+    <br>
     {% for product in products %}
-        {{ product.title }}
-        {{ product.description|truncatewords:20 }}
-        {{ product.price }}
-        <button>More Info</button>
-    <br><hr><br>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description|truncatewords:20 }}</p>
+        <h4>{{ product.price }}</h4>
+        <a href="{% url 'products:product_detail' product.id %}"><button>More Info</button></a>
+        <br><hr><br>
     {% endfor %}
 {% endblock %}
