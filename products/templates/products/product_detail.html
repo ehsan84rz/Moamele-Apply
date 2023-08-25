@@ -8,4 +8,5 @@ Product {{ product.title }}
     <h1>{{ product.title }}</h1>
     <p>{{ product.description }}</p>
     <h4>{{ product.price }}</h4>
+    <a href="{% url 'products:product_update' product.id %}"><button>Edit</button></a>
 {% endblock %}
