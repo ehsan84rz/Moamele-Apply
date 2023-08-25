@@ -5,6 +5,11 @@ Product {{ product.title }}
 {% endblock %}
 
 {% block content %}
+    {% if product.cover %}
+    <img src="{{ product.cover.url }}" alt="{{ product.title }} Cover">
+    {% else %}
+    <p>No cover image available</p>
+    {% endif %}
     <h1>{{ product.title }}</h1>
     <p>{{ product.description }}</p>
     <h4>{{ product.price }}</h4>
