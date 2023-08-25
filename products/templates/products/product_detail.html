@@ -8,5 +8,8 @@ Product {{ product.title }}
     <h1>{{ product.title }}</h1>
     <p>{{ product.description }}</p>
     <h4>{{ product.price }}</h4>
-    <a href="{% url 'products:product_update' product.id %}"><button>Edit</button></a>
+    {% if product.seller == user %}
+        <a href="{% url 'products:product_update' product.id %}"><button>Edit</button></a>
+        <a href="{% url 'products:product_delete' product.id %}"><button>Delete</button></a>
+    {% endif %}
 {% endblock %}
